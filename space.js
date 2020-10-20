@@ -5,14 +5,12 @@ class SpaceX {
     this.url = url;
   }
 
-fetchALauchpad(launchpadId) {
+  async fetchALauchpad(launchpadId) {
     if (launchpadId) {
-      return axios
+      return await axios
         .get(`${this.url}/${launchpadId}`)
         .then((response) => response)
         .catch((error) => error);
-    } else {
-      return {};
     }
   }
 }
